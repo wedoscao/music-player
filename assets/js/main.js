@@ -50,7 +50,7 @@ const app = {
             name: "Kill This Love",
             singer: "BLACKPINK",
             path: "https://github.com/wedoscao/music-player/blob/main/assets/music/KillThisLove-BLACKPINK-6291967.mp3?raw=true",
-            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/KillThisLove.jpeg?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/killthislove.jpg?raw=true",
         },
         {
             name: "Lalisa",
