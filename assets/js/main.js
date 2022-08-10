@@ -22,7 +22,10 @@ const app = {
     isShuffle: false,
     isRepeat: false,
     onDraft: false,
-    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {
+        isShuffle: false,
+        isRepeat: false,
+    },
     setConfig(key, value) {
         this.config[key] = value;
         localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
