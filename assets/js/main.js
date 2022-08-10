@@ -30,20 +30,20 @@ const app = {
         {
             name: "SOLO",
             singer: "Jennie",
-            path: "../assets/music/Solo-JennieBlackPink-5738971.mp3",
-            image: "../assets/img/solo.png",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/Solo-JennieBlackPink-5738971.mp3?raw=true",
+            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/solo.png",
         },
         {
             name: "Lovesick Girls",
             singer: "BLACKPINK",
-            path: "../assets/music/LovesickGirls-BLACKPINK-6720104.mp3",
-            image: "../assets/img/lovesickgirls.jpeg",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/LovesickGirls-BLACKPINK-6720104.mp3?raw=true",
+            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/lovesickgirls.jpeg",
         },
         {
             name: "Pretty Savage",
             singer: "BLACKPINK",
-            path: "../assets/music/PrettySavage-BLACKPINK-6720102.mp3",
-            image: "../assets/img/prettysavage.png",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/PrettySavage-BLACKPINK-6720102.mp3?raw=true",
+            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/prettysavage.png",
         },
     ],
     render() {
