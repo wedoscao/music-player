@@ -1,0 +1,12 @@
+@media screen and (min-width: 46.25em) {
+    :root {
+        --max-width: 1200px;
+    }
+    .dashboard {
+        position: fixed;
+        max-width: var(--max-width);
+    }
+    .player {
+        max-width: var(--max-width);
+    }
+}
