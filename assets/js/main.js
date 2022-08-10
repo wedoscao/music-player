@@ -31,32 +31,32 @@ const app = {
         {
             name: "Boombayah",
             singer: "BLACKPINK",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/Boombayah-BLACKPINK-6291993.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/boombayah.jpg?raw=true",
         },
         {
             name: "DDU-DU DDU-DU",
             singer: "BLACKPINK",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/DduduDdudu-BLACKPINK-6291998.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/Ddu-Du_Ddu-Du.png?raw=true",
         },
         {
             name: "Ice Cream",
             singer: "BLACKPINK (with Selena Gomez)",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/IceCreamWithSelenaGomez-BLACKPINK-6720101.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/Ice_Cream.png?raw=true",
         },
         {
             name: "Kill This Love",
             singer: "BLACKPINK",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/KillThisLove-BLACKPINK-6291967.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/KillThisLove.jpeg?raw=true",
         },
         {
             name: "Lalisa",
             singer: "Lisa",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/Lalisa%20-%20LISA.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/lalisa.jpg?raw=true",
         },
         {
             name: "Lovesick Girls",
@@ -67,8 +67,8 @@ const app = {
         {
             name: "On The Ground",
             singer: "Rosé",
-            path: "",
-            image: "",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/On%20The%20Ground%20-%20Rose.mp3?raw=true",
+            image: "https://github.com/wedoscao/music-player/blob/main/assets/img/Ros%C3%A9%E2%80%93On_the_Ground.jpg?raw=true",
         },
         {
             name: "Pretty Savage",
@@ -113,6 +113,28 @@ const app = {
     },
     handleEvent() {
         const _this = this;
+        // *hotkey
+        window.onkeydown = (e) => {
+            switch (e.key) {
+                case "ArrowRight":
+                    nextBtn.click();
+                    break;
+                case "ArrowLeft":
+                    prevBtn.click();
+                    break;
+                case " ":
+                    e.preventDefault();
+                    if (_this.isPlaying) {
+                        audio.pause();
+                    } else {
+                        audio.play();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        };
+
         // *shrink cd on scroll
         const cdWidth = cd.offsetWidth;
         document.onscroll = () => {
