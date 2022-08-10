@@ -138,11 +138,13 @@ const app = {
         // *shrink cd on scroll
         const cdWidth = cd.offsetWidth;
         document.onscroll = () => {
-            const scrollTop =
-                document.documentElement.scrollTop || window.scrollY;
-            const newCDWidth = cdWidth - scrollTop;
-            cd.style.width = newCDWidth > 0 ? newCDWidth + "px" : 0;
-            cd.style.opacity = newCDWidth / cdWidth;
+            if (window.innerWidth < 739) {
+                const scrollTop =
+                    document.documentElement.scrollTop || window.scrollY;
+                const newCDWidth = cdWidth - scrollTop;
+                cd.style.width = newCDWidth > 0 ? newCDWidth + "px" : 0;
+                cd.style.opacity = newCDWidth / cdWidth;
+            }
         };
 
         // *play on click
