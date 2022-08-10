@@ -37,7 +37,7 @@ const app = {
             name: "Lovesick Girls",
             singer: "BLACKPINK",
             path: "../assets/music/LovesickGirls-BLACKPINK-6720104.mp3",
-            image: "../assets/img/lovesickgirls.jpeg",
+            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/lovesickgirls.jpeg",
         },
         {
             name: "Pretty Savage",
