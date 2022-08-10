@@ -21,6 +21,7 @@ const app = {
     isPlaying: false,
     isShuffle: false,
     isRepeat: false,
+    onDraft: false,
     config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     setConfig(key, value) {
         this.config[key] = value;
@@ -28,10 +29,34 @@ const app = {
     },
     songs: [
         {
-            name: "SOLO",
-            singer: "Jennie",
-            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/Solo-JennieBlackPink-5738971.mp3?raw=true",
-            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/solo.png",
+            name: "Boombayah",
+            singer: "BLACKPINK",
+            path: "",
+            image: "",
+        },
+        {
+            name: "DDU-DU DDU-DU",
+            singer: "BLACKPINK",
+            path: "",
+            image: "",
+        },
+        {
+            name: "Ice Cream",
+            singer: "BLACKPINK (with Selena Gomez)",
+            path: "",
+            image: "",
+        },
+        {
+            name: "Kill This Love",
+            singer: "BLACKPINK",
+            path: "",
+            image: "",
+        },
+        {
+            name: "Lalisa",
+            singer: "Lisa",
+            path: "",
+            image: "",
         },
         {
             name: "Lovesick Girls",
@@ -40,10 +65,22 @@ const app = {
             image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/lovesickgirls.jpeg",
         },
         {
+            name: "On The Ground",
+            singer: "Rosé",
+            path: "",
+            image: "",
+        },
+        {
             name: "Pretty Savage",
             singer: "BLACKPINK",
             path: "https://github.com/wedoscao/music-player/blob/main/assets/music/PrettySavage-BLACKPINK-6720102.mp3?raw=true",
             image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/prettysavage.png",
+        },
+        {
+            name: "SOLO",
+            singer: "Jennie",
+            path: "https://github.com/wedoscao/music-player/blob/main/assets/music/Solo-JennieBlackPink-5738971.mp3?raw=true",
+            image: "https://raw.githubusercontent.com/wedoscao/music-player/main/assets/img/solo.png",
         },
     ],
     render() {
@@ -111,7 +148,7 @@ const app = {
 
         // *play progress on time update
         audio.ontimeupdate = () => {
-            if (audio.duration) {
+            if (audio.duration && !_this.onDraft) {
                 const progressPercent = Math.floor(
                     (audio.currentTime / audio.duration) * 100
                 );
@@ -194,6 +231,14 @@ const app = {
                 if (e.target.closest(".option")) {
                 }
             }
+        };
+
+        // *prevent progress bar run when draft
+        progress.onmousedown = () => {
+            _this.onDraft = true;
+        };
+        progress.onmouseup = (e) => {
+            _this.onDraft = false;
         };
     },
     scrollToActiveSong() {
